@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		add(2,3) => <span id="add_result"></span>
+		<br />
+		add(3,5) => <span id="add_result2"></span>
+		<br />
+		getMessage() => <span id="msg_result"></span>
+
+		<script type="text/javascript" src="functions.js"></script>
+		<script type="text/javascript">
+
+// wrap emscripten functions into normalized JavaScript functions
+function add(a,b){
+	return _add(a,b);
+}
+
+function getMessage(){
+	var msgPtr = _getMessage();
+
+	// need to convert c char* pointer into JavaScript string, from Emscripten API
+	var msg = Pointer_stringify(msgPtr);
+	return msg;
+}
+
+
+// use our functions
+document.getElementById("add_result").innerText = add(2,3);
+document.getElementById("add_result2").innerText = add(3,5);
+
+document.getElementById("msg_result").innerText = getMessage();
+
+		</script>
+	</body>
+</html>
