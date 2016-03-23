@@ -6,11 +6,11 @@ Sample code of running simple C functions across many platforms.
 
 (For these scripts, the tools are all cross-platform: Windows/Linux/MacOS)
 
-XCode Tools (LLVM)
-Java JDK (8+?)
-Groovy
-Python 2.7 (included in OS X)
+- XCode Tools (LLVM)
+- Java JDK (8+?)
+- Groovy
+- Python 2.7 (included in OS X)
 
 # Running:
 
-  ./build.sh
+    ./build.sh
